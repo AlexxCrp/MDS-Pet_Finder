@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bcfkWa6m8Zy6eNMYUnZLd77VfAEWXlW3rtqXR8jtikqDJVlsa1qlCN+eeudLau3vg4U2XZlNWSBI9e7AmeeonA==",
+  "dgSpecHash": "RlB6YABahf2uE4nSwByozKWyZlWngSo6NOKaR42FieUy9Ezze38gORTZhsj5Oe6Wy7jx+QJRccNI32IGG0I0Rg==",
   "success": true,
   "projectFilePath": "C:\\Users\\alexc\\Documents\\GitHub\\MDS-Pet_Finder\\PetFinder_API\\PetFinder_API\\PetFinder_API.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "C:\\Users\\alexc\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\alexc\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\alexc\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
+    "C:\\Users\\alexc\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
     "C:\\Users\\alexc\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\alexc\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
     "C:\\Users\\alexc\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",

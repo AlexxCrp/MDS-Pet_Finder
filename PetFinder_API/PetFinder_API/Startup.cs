@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using PetFinder_API.Entities;
+using PetFinder_API.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -97,6 +98,7 @@ namespace PetFinder_API
             services.AddAuthorization(opt =>
             {
                 opt.AddPolicy("BasicUser", policy => policy.RequireRole("BasicUser").RequireAuthenticatedUser().AddAuthenticationSchemes("AuthScheme").Build());
+                opt.AddPolicy("OwnerUser", policy => policy.RequireRole("OwnerUser").RequireAuthenticatedUser().AddAuthenticationSchemes("AuthScheme").Build());
                 opt.AddPolicy("Admin", policy => policy.RequireRole("Admin").RequireAuthenticatedUser().AddAuthenticationSchemes("AuthScheme").Build());
 
             });
@@ -113,8 +115,8 @@ namespace PetFinder_API
 //            services.AddSingleton<IAuthorsRepository, AuthorsRepository>(); // one single instance in the entire app
 //*/
 //            services.AddTransient<IAuthorsManager, AuthorsManager>();
-//            services.AddTransient<IAuthenticationManager, AuthenticationManager>();
-//            services.AddTransient<ITokenManager, TokenManager>();
+            services.AddTransient<IAuthenticationManager, AuthenticationManager>();
+            services.AddTransient<ITokenManager, TokenManager>();
 
         }
 
