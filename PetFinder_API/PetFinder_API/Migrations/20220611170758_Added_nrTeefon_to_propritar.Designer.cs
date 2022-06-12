@@ -3,23 +3,23 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PetFinder_API.Entities;
 
 namespace PetFinder_API.Migrations
 {
     [DbContext(typeof(WebContext))]
-    partial class WebContextModelSnapshot : ModelSnapshot
+    [Migration("20220611170758_Added_nrTeefon_to_propritar")]
+    partial class Added_nrTeefon_to_propritar
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.13")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.HasSequence("IdSequence");
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
@@ -110,24 +110,6 @@ namespace PetFinder_API.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("PetFinder_API.Entities.Imagine", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("PetId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<byte[]>("Poza")
-                        .HasColumnType("varbinary(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PetId");
-
-                    b.ToTable("Imagine");
-                });
-
             modelBuilder.Entity("PetFinder_API.Entities.IstoricMedical", b =>
                 {
                     b.Property<string>("Id")
@@ -151,14 +133,15 @@ namespace PetFinder_API.Migrations
             modelBuilder.Entity("PetFinder_API.Entities.Pet", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)")
-                        .HasDefaultValueSql("NEXT VALUE FOR IdSequence");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Greutate")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nume")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Poza")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProprietarId")
@@ -391,15 +374,6 @@ namespace PetFinder_API.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PetFinder_API.Entities.Imagine", b =>
-                {
-                    b.HasOne("PetFinder_API.Entities.Pet", "Pet")
-                        .WithMany("Imagini")
-                        .HasForeignKey("PetId");
-
-                    b.Navigation("Pet");
-                });
-
             modelBuilder.Entity("PetFinder_API.Entities.IstoricMedical", b =>
                 {
                     b.HasOne("PetFinder_API.Entities.Pet", "Pet")
@@ -462,8 +436,6 @@ namespace PetFinder_API.Migrations
 
             modelBuilder.Entity("PetFinder_API.Entities.Pet", b =>
                 {
-                    b.Navigation("Imagini");
-
                     b.Navigation("IstoricMedical");
                 });
 

@@ -33,9 +33,9 @@ namespace PetFinder_API.Managers
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
 
-            //var secretKey = configuration.GetSection("Jwt").GetSection("SecretKey").Get<string>();
+            var secretKey = configuration.GetSection("Jwt").GetSection("SecretKey").Get<string>();
 
-            var secretKey = "cheie secreta a mortii"; //nu merge linia de cod de mai sus, incercam asa (stiu ca e o mizerie)
+            //var secretKey = "cheie secreta a mortii"; //nu merge linia de cod de mai sus, incercam asa (stiu ca e o mizerie)
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(secretKey));
 

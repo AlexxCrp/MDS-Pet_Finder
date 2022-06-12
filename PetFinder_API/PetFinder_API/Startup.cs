@@ -12,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using PetFinder_API.Entities;
 using PetFinder_API.Managers;
+using PetFinder_API.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -109,14 +110,11 @@ namespace PetFinder_API
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
 
-//NU UITA DE ADD TRANSIENT SI NU UITA SA STERGI CE-I AICI
-//            services.AddTransient<IAuthorsRepository, AuthorsRepository>();//new instance of the service for each class that injects it
-//            /*services.AddScoped<IAuthorsRepository, AuthorsRepository>(); //same instance of the service for the entire duration of the request
-//            services.AddSingleton<IAuthorsRepository, AuthorsRepository>(); // one single instance in the entire app
-//*/
-//            services.AddTransient<IAuthorsManager, AuthorsManager>();
             services.AddTransient<IAuthenticationManager, AuthenticationManager>();
             services.AddTransient<ITokenManager, TokenManager>();
+
+            services.AddTransient<IPetsManager, PetsManager>();
+            services.AddTransient<IPetsRepository, PetsRepository>();
 
         }
 
