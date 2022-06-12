@@ -43,7 +43,17 @@ namespace PetFinder_API.Entities
                 .HasMany(p => p.Pets)
                 .WithOne(pet => pet.Proprietar);
 
-           
+            builder.Entity<Pet>()
+                .HasMany(p => p.Imagini)
+                .WithOne(img => img.Pet);
+
+            //Ca sa avem id diferit automat
+            builder.HasSequence("IdSequence")
+                              .StartsAt(1).IncrementsBy(1);
+            builder.Entity<Pet>()
+               .Property(x => x.Id)
+               .HasDefaultValueSql("NEXT VALUE FOR IdSequence");
+
         }
 
     }
