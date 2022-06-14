@@ -4,9 +4,9 @@
 
 ---
 
-- Ardeleanu Nicu Victor
-- Carpineanu Alexandru
-- Catarau Bianca
+- [Ardeleanu Nicu Victor](https://github.com/thatnickk)
+- [Carpineanu Alexandru](https://github.com/AlexxCrp)
+- [Catarau Bianca](https://github.com/cataraubianca)
 
 ---
 
