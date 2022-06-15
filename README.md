@@ -25,7 +25,7 @@ Aplicatia se inspira din dating apps, userul putand sa vizioneze diverse peturi 
 De asemenea, userul poate sa aiba un rol de owner pe aplicatie si sa puna animale de companie inspre adoptie.
 
 ---
-###PS
+##### PS
 
 ---
 Din pacate, din cauza unei multitudini de cauze, echipa noastra nu a reusit sa finalizeze aplicatia, aceasta avand doar backend-ul intr-o forma simplificata gata. Ne pare rau pentru esecul nostru de a livra o aplicatie completa.
